@@ -1,0 +1,18 @@
+Make a single-file HTML browser game: a split-screen side-scrolling platform runner starring two cartoon tech CEOs. It must look stunning within the first second, like a polished indie game trailer, because it will be screen-recorded for a 15-second clip that people understand instantly with the sound off.
+
+Layout (16:9, render at the window size, crisp on a 1600x900 window):
+- TOP HALF: "JENSEN" lane. A cartoon caricature of Nvidia CEO Jensen Huang that people recognise instantly: his trademark black leather jacket over a black t-shirt, thick silver-grey hair swept up and back, black rectangular glasses, broad cheerful grin, slightly stocky build, big-head chibi proportions so the face reads. He sprints across neon rooftops at night. The enemies are glamorous fashion-model spies (this is the joke: he once said "these Chinese models are excellent"): tall elegant women in red qipao-style dresses, dark sunglasses, earpiece, holding a briefcase, doing a confident catwalk strut toward him with camera flashes popping around them; they also slide in on the rooftop and descend from helicopters. Style them like stylish fashion models in a cartoon, NOT sexualised, and no exaggerated or caricatured ethnic facial features. Jensen jumps, double-jumps and slides past them with a panicked face. Near misses trigger a slow-mo flash and a little "!" pop.
+- BOTTOM HALF: "SAM" lane. A cartoon caricature of OpenAI CEO Sam Altman that people recognise instantly: slim build, short tousled brown hair, big round earnest eyes, slight calm smile, plain grey crewneck sweater over a white collar, jeans, big-head chibi proportions so the face reads. He runs across a landscape made of giant open laptops and desks. Glowing RAM sticks fly out of the laptops, he jumps to grab them with a satisfying sparkle and a "+16GB" pop. Each laptop he passes visibly deflates/turns grey as its RAM is taken. A counter in his corner: "RAM COLLECTED" ticking up fast, and a small meter "YOUR LAPTOP: 8GB → 4GB → 2GB" draining.
+- Tiny lane labels only: "DODGE THE CHINESE MODELS" (top) and "TAKE THEIR RAM" (bottom). No other text panels, no menus, no title screen, no dashboards.
+
+Visual quality bar (this is the point):
+- Everything drawn procedurally on canvas (no external images), but it must look like hand-made pixel art or crisp vector art, not rectangles: proper character silhouettes with run cycles (at least 6 frames), squash and stretch on jumps, hair/jacket bounce.
+- Multi-layer parallax backgrounds (skyline with lit windows, moon, searchlights in the top lane; a giant desk world with coffee mugs and cables in the bottom lane), glow and bloom (shadowBlur/additive blending), particle bursts, dust when landing, speed lines, gentle screen shake on near misses, smooth camera follow, 60 fps.
+- Rich colour: top lane deep blue/purple night with green Nvidia-ish accents; bottom lane warm office light with cyan RAM glow.
+
+Behaviour:
+- AUTOPLAY ON BY DEFAULT: both characters are controlled by a competent AI that plays well and looks exciting (close calls, combos, perfect jumps, the occasional dramatic slide), forever, starting the instant the page loads. Never die in autoplay. Player can take over anytime: W/S for Jensen, Up/Down for Sam.
+- Speed ramps up slowly for drama.
+- Optional WebAudio chiptune and sound effects, muted until first click.
+
+Must run in Chrome by opening the file (no build step, no external files; you may load nothing from the network). Output only the complete HTML file, nothing else.
