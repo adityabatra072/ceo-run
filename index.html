@@ -24,7 +24,7 @@ canvas#c{display:block;position:fixed;left:0;top:0;width:100vw;height:100vh;curs
 .keys{margin-top:20px;font-weight:700;font-size:12px;letter-spacing:1.4px;color:rgba(255,255,255,.72);text-align:center;max-width:640px;line-height:1.9}
 .keys kbd{font:inherit;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:1px 6px}
 .mini{font:800 12px "Avenir Next","Helvetica Neue",Arial,sans-serif;letter-spacing:2px;color:#fff;background:rgba(8,6,22,.65);border:1.5px solid rgba(255,255,255,.35);border-radius:999px;padding:9px 15px;cursor:pointer;touch-action:manipulation}
-#snd{margin-top:14px}
+#snd{margin-top:14px}.credit{display:block;margin-top:12px;font:700 12px/1.3 system-ui,sans-serif;letter-spacing:.06em;color:#9fe;opacity:.85;text-decoration:none;pointer-events:auto}.credit:hover{opacity:1;text-decoration:underline}
 #mbtn{position:fixed;left:max(12px,env(safe-area-inset-left));top:max(12px,env(safe-area-inset-top));z-index:4;display:none}
 #over{background:rgba(5,3,13,.5)}
 .ocard{--c:#8dff4a;--g:rgba(141,255,74,.3);width:min(380px,100%);box-sizing:border-box;padding:26px 22px 20px;border-radius:26px;background:linear-gradient(180deg,rgba(22,14,52,.94),rgba(8,6,22,.94));border:2px solid var(--c);box-shadow:0 0 44px var(--g),inset 0 0 26px var(--g);text-align:center}
@@ -57,7 +57,7 @@ canvas#c{display:block;position:fixed;left:0;top:0;width:100vw;height:100vh;curs
     <button class="pick s" id="pS" type="button"><canvas class="pv" id="cvS"></canvas><span><b>PLAY AS SAM</b><i>Take their RAM</i><em id="bestS">BEST 0 GB</em></span></button>
   </div>
   <div class="keys" id="keys"></div>
-  <button class="mini" id="snd" type="button">SOUND: ON</button>
+  <button class="mini" id="snd" type="button">SOUND: ON</button><a class="credit" href="https://x.com/AdityaBatra072" target="_blank" rel="noopener">new stages drop on X &middot; @AdityaBatra072</a>
 </div>
 <button class="mini" id="mbtn" type="button">MENU</button>
 <div id="over" class="ov"><div class="ocard">
@@ -69,7 +69,7 @@ canvas#c{display:block;position:fixed;left:0;top:0;width:100vw;height:100vh;curs
   <div class="best" id="obest">BEST 0 m</div>
   <div class="ext" id="oext"></div>
   <div class="row"><button class="btn prim" id="retry" type="button">RETRY</button><button class="btn ghost" id="omenu" type="button">MENU</button></div>
-  <div class="tip" id="otip">SPACE TO RETRY &middot; ESC FOR MENU</div>
+  <div class="tip" id="otip">SPACE TO RETRY &middot; ESC FOR MENU</div><a class="credit" href="https://x.com/AdityaBatra072" target="_blank" rel="noopener">next CEO stage drops on X &middot; @AdityaBatra072</a>
 </div></div>
 <script>
 'use strict';
