@@ -55,7 +55,7 @@ canvas#c{display:block;position:fixed;left:0;top:0;width:100vw;height:100vh;curs
   <div class="title">CEO RUN</div>
   <div class="kick">Pick your runner</div>
   <div class="btns">
-    <button class="pick j" id="pJ" type="button"><canvas class="pv" id="cvJ"></canvas><span><b>PLAY AS JENSEN</b><i>Dodge the Chinese models</i><em id="bestJ">BEST 0 m</em></span></button>
+    <button class="pick j" id="pJ" type="button"><canvas class="pv" id="cvJ"></canvas><span><b>PLAY AS JENSEN</b><i>Dodge the spies</i><em id="bestJ">BEST 0 m</em></span></button>
     <button class="pick s" id="pS" type="button"><canvas class="pv" id="cvS"></canvas><span><b>PLAY AS SAM</b><i>Take their RAM</i><em id="bestS">BEST 0 GB</em></span></button>
     <button class="pick a" id="pA" type="button"><canvas class="pv" id="cvA"></canvas><span><b>PLAY AS THE AGENT</b><i>Escape the eval</i><em id="bestA">BEST 0 FLAGS</em></span></button>
   </div>
@@ -65,7 +65,7 @@ canvas#c{display:block;position:fixed;left:0;top:0;width:100vw;height:100vh;curs
 <button class="mini" id="mbtn" type="button">MENU</button>
 <div id="over" class="ov"><div class="ocard">
   <div class="gov">GAME OVER</div>
-  <div class="why" id="why">CAUGHT BY THE MODELS</div>
+  <div class="why" id="why">CAUGHT BY A SPY</div>
   <div class="lbl" id="olbl">SCORE</div>
   <div class="big" id="osc">0 m</div>
   <div class="nb" id="onb">NEW BEST!</div>
@@ -587,7 +587,7 @@ function drawTop(g,now){const L=T,r=L.r,cam=L.cam;
   drawParts(g,L);drawPops(g,L);
   g.restore();
   overlays(g,L,'#c8ffd0','rgba(190,255,210,.5)');
-  if(!STAGE)label(g,'DODGE THE CHINESE MODELS','#8dff4a');
+  if(!STAGE)label(g,'DODGE THE SPIES','#8dff4a');
 }
 function drawBottom(g,now){const L=B,r=L.r,cam=L.cam;
   let gr=g.createLinearGradient(0,0,0,LH);gr.addColorStop(0,'#ffdca8');gr.addColorStop(.55,'#f8a970');gr.addColorStop(1,'#d86f5c');g.fillStyle=gr;g.fillRect(0,0,VW,LH);
@@ -647,7 +647,7 @@ function pickTop(L){const t=L.t,q=Math.random();let ty;
   if(ty===L.lastTy&&(ty==='gap'||ty==='trio'||ty==='stamp'))ty='strut';
   const d=clamp((t-5)/70,0,1);
   return{ty,rest:t<6?rnd(1.1,1.5):lerp(.85,.24,d)+rnd(0,lerp(.5,.3,d))};}
-const TOPHIT={strut:['CAUGHT BY THE MODELS','CAUGHT!'],trio:['CAUGHT BY THE MODELS','CAUGHT!'],slide:['TACKLED BY A SLIDING MODEL','CAUGHT!'],
+const TOPHIT={strut:['CAUGHT BY A SPY','CAUGHT!'],trio:['CAUGHT BY A SPY','CAUGHT!'],slide:['TACKLED BY A SPY','CAUGHT!'],
   heli:['SNATCHED BY A HELI SPY','SNATCHED!'],crate:['TRIPPED ON A CHIP SHIPMENT','OOF!'],stamp:['FLATTENED BY AN EXPORT BAN','BANNED!'],fall:['FELL OFF THE ROOF','WHOOPS']};
 function updStamp(L,e,sx,dt){if(e.sy===undefined){e.sy=560;e.svy=0;}
   if(!e.landed&&sx-PX<520){e.svy+=3600*dt;e.sy=Math.max(0,e.sy-e.svy*dt);
@@ -1077,7 +1077,7 @@ function livesRow(g,X,unit){const y=124,best=Math.max(curScore(),bestNow),nb=bes
 function hud(now){const g=ctx,u=HU,J=STAGE==='J',A=STAGE==='A',L=lane();g.setTransform(DPR*u,0,0,DPR*u,0,0);const hw=W/u,hh=H/u,port=hw<640,X=hw-20;
   if(J)capCounter(g,X,now);else if(A)flagCounter(g,X,now);else ramCounter(g,X,0,L,now);
   livesRow(g,X,J?' m':A?' FLAGS':' GB');
-  const lbl=J?'DODGE THE CHINESE MODELS':A?'ESCAPE THE EVAL':'TAKE THEIR RAM',lc=J?'#8dff4a':A?'#5cffc8':'#5ff';
+  const lbl=J?'DODGE THE SPIES':A?'ESCAPE THE EVAL':'TAKE THEIR RAM',lc=J?'#8dff4a':A?'#5cffc8':'#5ff';
   g.font='800 12.5px "Avenir Next","Helvetica Neue",Arial,sans-serif';g.letterSpacing='2.5px';const lw=g.measureText(lbl).width+36;g.letterSpacing='0px';
   if(port)label(g,lbl,lc,(hw-lw)/2,170);else label(g,lbl,lc,110,16);
   if(PH==='play'&&hintT<6.5){const a=Math.min(1,6.5-hintT)*Math.min(1,hintT*3);
